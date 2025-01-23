@@ -83,7 +83,7 @@ int main(int argc, char const *argv[])
     cout<<"Enter Dataword : ";
     cin>>dataword;
     string key;
-    cout<<"Enter Generator : ";
+    cout<<"Enter Key : ";
     cin>>key;
 
     cout<<"The encoded string is : ";
@@ -93,6 +93,27 @@ int main(int argc, char const *argv[])
     cout<<"Reciever side..."<<endl;
 
     bool decoding = decodeData(encoded, key);
+    if(decoding)
+    {
+        cout<<"Dataword"<<endl;
+        cout<<"Data recieved successfully"<<endl;
+    }
+    else
+    {
+        cout<<"Invalid"<<endl;
+        cout<<"Error in data"<<endl;
+    }
+
+    cout<<"Taking encoded data from user..."<<endl;
+
+    string encodedUser;
+    cout<<"Enter encoded string : ";
+    cin>>encodedUser;
+    string key2;
+    cout<<"Enter key : ";
+    cin>>key2;
+
+    decoding = decodeData(encodedUser, key2);
     if(decoding)
     {
         cout<<"Dataword"<<endl;
